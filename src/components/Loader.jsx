@@ -56,7 +56,6 @@ const pathVariants = {
 
     transition: {
       duration: 2,
-      // yoyo: Infinity,
       ease: 'easeInOut',
     },
   },
