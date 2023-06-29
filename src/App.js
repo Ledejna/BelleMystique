@@ -40,15 +40,12 @@ function App() {
               smooth: true,
             },
           }}
-          watch={
-            [
-            ]
-          }
+          watch={[]}
           containerRef={containerRef}
         >
           <AnimatePresence>{Loaded ? null : <Loader />}</AnimatePresence>
           <main className="App" data-scroll-container ref={containerRef}>
-          <ScrollTriggerProxy />
+            <ScrollTriggerProxy />
             <AnimatePresence>
               {Loaded ? null : <Loader />}
               <Home key="home" />

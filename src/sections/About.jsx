@@ -144,13 +144,17 @@ const About = () => {
         About Us
       </Title>
       <Left data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
-        Belle Mystique.
-        We create unique designs
-        that will blow your mind. We also design unique jewellary pieces.
-        Fashion is an ART that can not be grasped by everyone.
+        Belle Mystique. We create unique designs that will blow your mind. We
+        also design unique jewellary pieces. Fashion is an ART that can not be
+        grasped by everyone.
         <br />
         <br />
-        Drawing inspiration from a diverse range of influences, Belle Mystique designs embody a sense of individuality and empower the wearer to express their personal style with confidence. Whether it's a glamorous evening gown, a sophisticated business ensemble, or a casual yet chic everyday outfit, Belle Mystique offers a versatile collection that caters to every occasion.
+        Drawing inspiration from a diverse range of influences, Belle Mystique
+        designs embody a sense of individuality and empower the wearer to
+        express their personal style with confidence. Whether it's a glamorous
+        evening gown, a sophisticated business ensemble, or a casual yet chic
+        everyday outfit, Belle Mystique offers a versatile collection that
+        caters to every occasion.
       </Left>
 
       <Right>

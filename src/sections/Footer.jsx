@@ -16,7 +16,6 @@ const Section = styled.section`
   align-items: center;
   overflow-x: hidden;
 
-
   background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
 
@@ -176,21 +175,19 @@ const Footer = () => {
             data-scroll-speed="2"
             data-scroll-direction="horizontal"
           >
-            &copy; 2022. All Rights Reserved.
+            &copy; 2023. All Rights Reserved.
           </span>
           <span
             data-scroll
             data-scroll-speed="-2"
             data-scroll-direction="horizontal"
           >
-            Made with &hearts; by{" "}
+            Made with &hearts;
             <a
               href="http://devdreaming.com"
               target={"_blank"}
               rel="dofollow noreferrer"
-            >
-              CodeBucks
-            </a>
+            ></a>
           </span>
         </Bottom>
       </FooterComponent>
