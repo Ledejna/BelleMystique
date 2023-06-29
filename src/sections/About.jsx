@@ -4,6 +4,8 @@ import styled from "styled-components";
 import img1 from "../assets/Images/1.webp";
 import img2 from "../assets/Images/2.webp";
 import img3 from "../assets/Images/3.webp";
+import {LocomotiveScrollProvider} from "react-locomotive-scroll";
+import TourAnimation from "../components/TourAnimation";
 
 const Section = styled.section`
   min-height: 100vh;
@@ -74,12 +76,14 @@ const Right = styled.div`
     right: 95%;
     bottom: 10%;
   }
+
   .small-img-2 {
     width: 40%;
     position: absolute;
     left: 80%;
     top: 30%;
   }
+
   @media (max-width: 64em) {
     width: 100%;
     display: flex;
@@ -97,6 +101,7 @@ const Right = styled.div`
       left: 5%;
       bottom: 10%;
     }
+
     .small-img-2 {
       width: 30%;
       height: auto;
@@ -134,52 +139,55 @@ const Title = styled.h1`
 `;
 
 const About = () => {
-  return (
-    <Section id="fixed-target" className="about">
-      <Title
-        data-scroll
-        data-scroll-speed="-2"
-        data-scroll-direction="horizontal"
-      >
-        About Us
-      </Title>
-      <Left data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
-        Belle Mystique. We create unique designs that will blow your mind. We
-        also design unique jewellary pieces. Fashion is an ART that can not be
-        grasped by everyone.
-        <br />
-        <br />
-        Drawing inspiration from a diverse range of influences, Belle Mystique
-        designs embody a sense of individuality and empower the wearer to
-        express their personal style with confidence. Whether it's a glamorous
-        evening gown, a sophisticated business ensemble, or a casual yet chic
-        everyday outfit, Belle Mystique offers a versatile collection that
-        caters to every occasion.
-      </Left>
+    return (
+        <>
+            <TourAnimation/>
+            <Section id="fixed-target" className="about">
+                <Title
+                    data-scroll
+                    data-scroll-speed="-2"
+                    data-scroll-direction="horizontal"
+                >
+                    About Us
+                </Title>
+                <Left data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
+                    Belle Mystique. We create unique designs that will blow your mind. We
+                    also design unique jewellary pieces. Fashion is an ART that can not be
+                    grasped by everyone.
+                    <br/>
+                    <br/>
+                    Drawing inspiration from a diverse range of influences, Belle Mystique
+                    designs embody a sense of individuality and empower the wearer to
+                    express their personal style with confidence. Whether it's a glamorous
+                    evening gown, a sophisticated business ensemble, or a casual yet chic
+                    everyday outfit, Belle Mystique offers a versatile collection that
+                    caters to every occasion.
+                </Left>
 
-      <Right>
-        <img width="400" height="600" src={img1} alt="About Us" />
-        <img
-          width="400"
-          height="600"
-          className="small-img-1"
-          src={img2}
-          alt="About Us"
-          data-scroll
-          data-scroll-speed="5"
-        />
-        <img
-          width="400"
-          height="600"
-          className="small-img-2"
-          src={img3}
-          alt="About Us"
-          data-scroll
-          data-scroll-speed="-2"
-        />
-      </Right>
-    </Section>
-  );
+                <Right>
+                    <img width="400" height="600" src={img1} alt="About Us"/>
+                    <img
+                        width="400"
+                        height="600"
+                        className="small-img-1"
+                        src={img2}
+                        alt="About Us"
+                        data-scroll
+                        data-scroll-speed="5"
+                    />
+                    <img
+                        width="400"
+                        height="600"
+                        className="small-img-2"
+                        src={img3}
+                        alt="About Us"
+                        data-scroll
+                        data-scroll-speed="-2"
+                    />
+                </Right>
+            </Section>
+        </>
+    );
 };
 
 export default About;
