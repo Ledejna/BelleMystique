@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 
 import MainVideo from "../assets/Walking Girl.mp4";
+import MainAudio from "../assets/audio.mp3";
 
 const VideoContainer = styled.section`
   width: 100%;
@@ -58,7 +59,6 @@ const Title = styled(motion.div)`
     text-shadow: 1px 1px 1px ${(props) => props.theme.body};
 
     @media (max-width: 30em) {
-      /* font-size: ${(props) => props.theme.fontxxxl}; */
       font-size: calc(5rem + 8vw);
     }
   }
@@ -73,7 +73,6 @@ const Title = styled(motion.div)`
 
     @media (max-width: 30em) {
       font-size: ${(props) => props.theme.fontmd};
-      /* font-size: calc(5rem + 8vw); */
       margin-top: -1.5rem;
     }
   }
@@ -84,7 +83,7 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      delayChildren: 5, // 2
+      delayChildren: 5,
       staggerChildren: 0.3,
     },
   },
@@ -96,66 +95,78 @@ const item = {
 };
 
 const CoverVideo = () => {
+  const videoRef = useRef(null);
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    videoRef.current.addEventListener("canplay", () => {
+      audioRef.current.currentTime = 0; // Set audio to start from the beginning
+      audioRef.current.play();
+    });
+  }, []);
+
   return (
-    <VideoContainer data-scroll>
-      <DarkOverlay />
+      <VideoContainer data-scroll>
+        <DarkOverlay />
 
-      <Title variants={container} initial="hidden" animate="show">
-        <div>
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.13"
-            data-scroll-speed="4"
+        <Title variants={container} initial="hidden" animate="show">
+          <div>
+            <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.13"
+                data-scroll-speed="4"
+            >
+              B
+            </motion.h1>
+            <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.09"
+                data-scroll-speed="4"
+            >
+              e
+            </motion.h1>
+            <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.06"
+                data-scroll-speed="4"
+            >
+              l
+            </motion.h1>
+            <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.04"
+                data-scroll-speed="4"
+            >
+              l
+            </motion.h1>
+            <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.02"
+                data-scroll-speed="4"
+            >
+              e
+            </motion.h1>
+          </div>
+          <motion.h2
+              style={{ alignSelf: "flex-end" }}
+              variants={item}
+              data-scroll
+              data-scroll-delay="0.04"
+              data-scroll-speed="2"
           >
-            B
-          </motion.h1>
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.09"
-            data-scroll-speed="4"
-          >
-            e
-          </motion.h1>
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.06"
-            data-scroll-speed="4"
-          >
-            l
-          </motion.h1>
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.04"
-            data-scroll-speed="4"
-          >
-            l
-          </motion.h1>
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.02"
-            data-scroll-speed="4"
-          >
-            e
-          </motion.h1>
-        </div>
-        <motion.h2
-          style={{ alignSelf: "flex-end" }}
-          variants={item}
-          data-scroll
-          data-scroll-delay="0.04"
-          data-scroll-speed="2"
-        >
-          inspire. create. belive
-        </motion.h2>
-      </Title>
+            inspire. create. belive
+          </motion.h2>
+        </Title>
 
-      <video src={MainVideo} type="video/mp4" autoPlay muted loop />
-    </VideoContainer>
+        <video src={MainVideo} type="video/mp4" autoPlay muted loop ref={videoRef} />
+
+        <audio src={MainAudio} type="audio/mp3" autoPlay loop ref={audioRef} />
+      </VideoContainer>
   );
 };
 
